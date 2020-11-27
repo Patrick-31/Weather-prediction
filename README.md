@@ -35,7 +35,7 @@ Purpose:     - add month data in one file "synop.csv"
  Licence:     <your licence>
 -------------------------------------------------------------------------------
 
-read a data file and put data in a string : oneStringData
+#read a data file and put data in a string : oneStringData
 file = open("E:/synop.202001.csv", "r")
 oneStringData = file.read()
 file.close()
@@ -152,33 +152,33 @@ Here is the code to test...
  Copyright:   (c) Patrick 2020
  Licence:     <your licence>
 -------------------------------------------------------------------------------
-read a data file and put data in a string : oneStringData
+#read a data file and put data in a string : oneStringData
 file = open("E:/synop-town.csv", "r")
 oneStringData = file.read()
 file.close()
 
-split string in list of lines : townDataList
+#split string in list of lines : townDataList
 townDataList = oneStringData.split("\n")
 
-split lines in list of data
+#split lines in list of data
 townData = list()
 for i in townDataList:
     townData.append(i.split(";"))
 
 -------------------------------------
-day to predict and period test width
+#day to predict and period test width
 daytopredict = "20200926000000"     #it's 2020 september 26
 periodTestWidth = 24                #8 data for 1 day, 16 for 2 days, 24 for 3 days ...
 -------------------------------------
 
-found index of daytopredict
+#found index of daytopredict
 indexdaytopredict = 0
 j = 0
 for j, date in enumerate(townData):
     if date[1] == daytopredict :
         indexdaytopredict = j
 
-compute smallest distance from a period to previous period : smallestDistance
+#compute smallest distance from a period to previous period : smallestDistance
 distance on temperature only...for now
 smallestDistance = 10000
 indexdaythesame = 0
@@ -194,7 +194,7 @@ for indexdaytotest in range(periodTestWidth, indexdaytopredict-periodTestWidth, 
     except:
         continue
 
-test : is forescat temperature "good" ?
+#test : is forescat temperature "good" ?
 print("#diplay temperature during periodTestWidth befor day to predict")
 print("indexdaytopredict = ", indexdaytopredict, "day = ", (townData[indexdaytopredict])[1])
 for j in range(periodTestWidth):
