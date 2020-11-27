@@ -23,6 +23,7 @@ This project can be used by person who have a connected thermometer.
 Evry 3 hours temperature is added to data, compute nearest temperature period and predict next day temperature.
 
 Here is the code to isolate data from my town for year 2020
+```
 -------------------------------------------------------------------------------
 Name:        Trial-data filemaker
 Purpose:     - add month data in one file "synop.csv"
@@ -90,8 +91,10 @@ file.close()
 file = open("E:/synop.csv", "a")
 file.write(stringData)
 file.close()
+```
 
 Here is the code to test...
+```
 -------------------------------------------------------------------------------
  Name:        Trial
  Purpose:     - compute the smallest distance between temperature during a period
@@ -133,7 +136,7 @@ for j, date in enumerate(townData):
         indexdaytopredict = j
 
 compute smallest distance from a period to previous period : smallestDistance
-#distance on temperature only...for now
+distance on temperature only...for now
 smallestDistance = 10000
 indexdaythesame = 0
 for indexdaytotest in range(periodTestWidth, indexdaytopredict-periodTestWidth, periodTestWidth):
@@ -169,6 +172,7 @@ print("#display temperature of the day the same")
 print("indexdaythesame = ",indexdaythesame, "day = ", (townData[indexdaythesame])[1])
 for j in range(8):
     print("temperature atÂ  ",3*j, "h = ", (float((townData[indexdaythesame - periodTestWidth + j])[7])-273.16))
+```
 
 ## Data sources and AI methods
 
