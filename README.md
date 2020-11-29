@@ -232,7 +232,8 @@ With only temperature parameter... predictions will be "predictions".
 ## What next?
 Pressure, wind direction can be added to improve the model.
 
-
+Add: Trial-0 now compute distance with temperature, pressure and humidity.
+     Predictions are not so bad...for 3 days.
 
 ## Acknowledgments
 
